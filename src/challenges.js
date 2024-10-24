@@ -13,13 +13,26 @@ const repeatedWords = [
   "matter"
 ];
 
-function howManyTimes() {}
+function howManyTimes(arrayOfWords, wordToSearch) {
+  if (arrayOfWords.length === 0) return 0;
+      
+  return arrayOfWords.filter((word) => word === wordToSearch).length //filter() returns an array .length gibt uns die zahl
+}
 
 
 
 
 // Iteration 2 | Number Sequence
-function createSequence() {}
+function createSequence(n) {
+  if (n === 0) return [];
+  
+  const sequenceArray = [];
+  while(n >= 0) {
+    sequenceArray.unshift(n);
+    n--
+  }
+  return sequenceArray;
+}
 
 
 
@@ -27,7 +40,16 @@ function createSequence() {}
 // Iteration 3 | Multiply for Each
 const numbers = [1, 2, 5, 10, 13, 50];
 
-function multiplyBy() {}
+function multiplyBy(arrOfNumbers, multiplier) {
+  if (arrOfNumbers.length === 0) return [];
+
+  const newArray = [];
+  arrOfNumbers.forEach((number) => {
+    newArray.push(number*multiplier);
+  })
+  return newArray;
+}
+//can do with map ?
 
 
 
@@ -36,7 +58,15 @@ function multiplyBy() {}
 const original = ["cat", "dog", "fish", "bird", "cat", "fish"];
 const toRemove = ["cat", "dog"];
 
-function filterOut() {}
+function filterOut(toBeFilteredArr, whatToRemoveArr) {
+    if(toBeFilteredArr.length === 0) return null;
+    if(whatToRemoveArr.length === 0) return toBeFilteredArr;
+
+    const aCat = toRemove[0]
+    const aDog =  toRemove[1]
+    return toBeFilteredArr.filter(pet => pet !== aCat && pet !== aDog );   
+   
+}
 
 
 
@@ -56,7 +86,11 @@ const duplicateWords = [
   "bring"
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(array) {
+  if (array.length === 0) return null;
+
+  return [...new Set(array)];
+}
 
 
 
