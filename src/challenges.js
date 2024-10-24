@@ -54,20 +54,30 @@ function multiplyBy(arrOfNumbers, multiplier) {
 
 
 
-// Iteration 4 | Filter Out
+// Iteration 4 | Filter Out //use includes() somehow
 const original = ["cat", "dog", "fish", "bird", "cat", "fish"];
 const toRemove = ["cat", "dog"];
 
 function filterOut(toBeFilteredArr, whatToRemoveArr) {
     if(toBeFilteredArr.length === 0) return null;
     if(whatToRemoveArr.length === 0) return toBeFilteredArr;
-
-    const aCat = toRemove[0]
+ 
+    return toBeFilteredArr.filter(pet => !whatToRemoveArr.includes(pet) );  
+  
+  //hot garbage
+  /* const aCat = toRemove[0]
     const aDog =  toRemove[1]
-    return toBeFilteredArr.filter(pet => pet !== aCat && pet !== aDog );   
-   
-}
+    return toBeFilteredArr.filter(pet => pet !== aCat && pet !== aDog ); */ 
 
+  //working solution
+  /* const filteredArray = [];
+  toBeFilteredArr.forEach(function (word) {    
+    if (!whatToRemoveArr.includes(word)) {
+      filteredArray.push(word);
+    }
+  }) 
+   return filteredArray; */
+}
 
 
 
